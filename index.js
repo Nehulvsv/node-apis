@@ -12,7 +12,7 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const verifyToken = require("./utils/verifyUser");
-const path = require("path");
+// const path = require("path");
 
 // MIDDLLWARE
 dotenv.config();
@@ -260,9 +260,9 @@ app.post("/unbookmark/:postId", async (req, res) => {
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+// });
 
 const PORT = process.env.PORT || 6600;
 app.listen(PORT, () => {
